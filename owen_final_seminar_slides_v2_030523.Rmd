@@ -1142,8 +1142,7 @@ class: middle, center
 
 --
 
-.content-box-red[In preparation for submission to _Nature Neuroscience_ 
-]
+**In preparation for submission to _Nature Neuroscience_ **
 
 ---
 #### (1) **Cross-sample replication** of Chapter 3 clustering across LABS and HBN datasets
@@ -1166,10 +1165,6 @@ knitr::include_graphics("imgs/psds_p1_summary_080423.png")
 <center>
 ```{r out.width=800}
 knitr::include_graphics("imgs/replication_radar_plots_220423.png")
-```
-
-```{r out.width=200}
-knitr::include_graphics("imgs/ntable_c5.jpeg")
 ```
 </center>
 
@@ -1219,14 +1214,19 @@ knitr::include_graphics("imgs/fingerprints_p3_pipeline_230423.png")
 
 
 <br>
+<br>
+<br>
 
 
-.content-box-green[`r emo::ji("brain")` `r emo::ji("star")` Cross-method, cross-sample replication of resting state EEG phenotypes in adolescents, and extension of more sophisticated phenotypes based on latent states, temporal dynamics, and functional characteristics within states]
+.content-box-green[
+`r emo::ji("brain")` `r emo::ji("star")` Cross-method, cross-sample replication of resting state EEG phenotypes in adolescents, and extension of more sophisticated phenotypes based on latent states, temporal dynamics, and functional characteristics within states
+]
 
 --
 <br>
 
-.content-box-purple[`r emo::ji("fire")` `r emo::ji("cool")` `r emo::ji("sunglasses")` Strong foundation for potential clinical applications - risk/protective biomarkers, support early intervention and care planning personalised medicine `r emo::ji("100")``r emo::ji("100")``r emo::ji("100")`
+.content-box-purple[
+`r emo::ji("fire")` `r emo::ji("cool")` `r emo::ji("sunglasses")` Strong foundation for potential clinical applications - risk/protective biomarkers, support early intervention and care planning personalised medicine `r emo::ji("100")``r emo::ji("100")``r emo::ji("100")`
 ]
 
 ---
@@ -1236,8 +1236,7 @@ knitr::include_graphics("imgs/fingerprints_p3_pipeline_230423.png")
 ]
 --
 
-<br>
-.content-box-red[Single-electrode data - limits understanding of spatial patterns of brain activity and functional connectivity
+.content-box-red[Single electrode data - limits understanding of spatial patterns of brain activity and functional connectivity
 ]
 
 --
@@ -1294,7 +1293,7 @@ knitr::include_graphics("imgs/fingerprints_p3_pipeline_230423.png")
 
 --
 
-- _clusterBMA_  R package: **bit.ly/clusterBMA** 
+**_clusterBMA_  R package: bit.ly/clusterBMA** 
 
 ```{r out.width=100}
 knitr::include_graphics("imgs/github_QR.png")
