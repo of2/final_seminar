@@ -1,9 +1,9 @@
 ---
-title: "Statistical Machine Learning Methods for <br> Analysis of a Complex Longitudinal Study of <br>Adolescent Brain Development and Mental Health<br><br>"
+title: "Statistical machine learning methods for neuroscientific data: <br>Analysing brain activity, psychopathology and <br> cognitive function in adolescents<br><br>"
 subtitle: "Final Seminar<br>Owen Forbes<br>May 5 2023<br><br>"
 author: ""
 institute: ""
-date: " Distinguished Professor Kerrie Mengersen (Principal Supervisor)<br>Dr Paul Wu (Associate Supervisor)<br>Dr Edgar Santos Fernandez<br><br>Queensland University of Technology"
+date: " Distinguished Professor Kerrie Mengersen (Principal Supervisor)<br>Dr Paul Wu (Associate Supervisor)<br>Dr Edgar Santos Fernandez (Associate Supervisor)<br><br>Queensland University of Technology"
 output:
   xaringan::moon_reader:
     self_contained: TRUE
@@ -55,176 +55,33 @@ library(kableExtra)
 library(purrr)
 
 
-setwd("~/Dropbox/QUT_MPhil/1-ThesisMaster/4-MILESTONES/Milestone2_Articulation/Seminar_slides/slides")
+setwd("~/Dropbox/QUT_MPhil/1-ThesisMaster/4-MILESTONES/Milestone3_FinalSeminar/final_seminar")
 
 knitr::opts_chunk$set(cache = T, echo=F)
 
 ```
-
-
-### Outline
-
-1. Introduction
-    - The Longitudinal Adolescent Brain Study (LABS)
-    - Aims & Overview
-2. Background & Literature Review
-    - Mental Health & Neurophysiology
-    - Statistical Methods
-4. Research Plan
-5. Progress to Date
-6. Timeline & Next Steps
+#### Mental Health in Adolescence
 
 ---
-
-background-image: url("imgs/LABS.jpg")
-background-position: right
-background-size: contain
-
-### The Longitudinal Adolescent <br>  Brain Study (LABS)
-
---
-<br>
-<br>
-- Led by researchers at the Thompson Institute, USC
-
---
-
-- Longitudinal cohort study of youth <br> population in the Sunshine Coast
-
---
-
-- Follows participants over 5 years from age 12 to 17
-
---
-
-- Recruitment goal: 500 participants
-
----
-
-background-image: url("imgs/LABS.jpg")
-background-position: right
-background-size: contain
-
-### The Longitudinal Adolescent <br>  Brain Study (LABS)
-
-
-- Data collection every 4 months
-
---
-
-**Mental health (self-report questionnaire)**
-
---
-
-  - Distress (K10, SPHERE12)
-  - Wellbeing (COMPAS-W)
-  - Suicidality (SIDAS, YRBS)
-  - Sleep quality (PSQI)
-
---
-
-Psychiatric diagnostic interview
-
---
-
-Cognitive testing battery 
-
---
-
-**Neuroimaging**
-
---
-
-- **Electroencephalography (EEG)** `r emo::ji("star")` `r emo::ji("brain")`
-  
---
-  
-- Structural Magnetic Resonance Imaging (MRI)
-  
---
-  
-- Functional MRI (fMRI)
-
----
-### Aims & Overview
---
-
-Using data from the Longitudinal Adolescent Brain Study, implement and extend statistical machine learning methods for analysing complex longitudinal data.
-
---
-
-**Traditional approach**
-
---
-
-```{r out.width=800}
-knitr::include_graphics("imgs/trad-approach.jpg")
-```
-
-
---
-
-**Our approach**
-
---
-
-```{r out.width=1000}
-knitr::include_graphics("imgs/our-approach.jpg")
-```
-
----
-### Aims & Overview
-
---
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-`r emo::ji("right arrow")` **Without knowing anything about LABS participants' mental health symptoms or diagnoses, what can we learn by using brain measurements to build data-driven clusters and profiles of individuals?**
-
-
-
----
-
-
-class: middle, center
-
-# Literature Review: Mental Health & Neurophysiology
-
-
----
-
-### Mental Health in Adolescence
-
+#### Mental Health in Adolescence
 .content-box-blue[
-- Mental health issues are a significant and growing problem in youth populations (Sawyer et al., 2018; McGorry & Mei, 2018)
-]
+- Mental health issues are a significant and growing problem in youth populations (Sawyer et al., 2018; McGorry & Mei, 2018)]
 --
-
-
 .content-box-red[
-- Many mental health problems & disorders are thought to emerge in adolescence; period of rapid brain development and change (Paus et al., 2008; McGorry et al., 2011)
-]
+- Many mental health problems & disorders are thought to emerge in adolescence; period of rapid brain development and change (Paus et al., 2008; McGorry et al., 2011)]
 --
-
 .content-box-green[
 - Mental health risk in childhood & adolescence is understood to be **pluripotential**
-  - Non-specific risk overlaps across a number of clinical diagnostic categories (Raballo & Poletti, 2020; Hartmann et al., 2019)
-]
-
+  - Non-specific risk overlaps across a number of clinical diagnostic categories (Raballo & Poletti, 2020; Hartmann et al., 2019)]
 --
 
-- `r emo::ji("backhand index pointing right")` We need **improved data-driven statistical modeling** to better understand the <br> **complex relationships between neurophysiology and mental health in adolescence** `r emo::ji("brain")`
+`r emo::ji("backhand index pointing right")` We need **improved data-driven statistical modeling** to better understand the <br> **complex relationships between neurophysiology and mental health in adolescence** `r emo::ji("brain")`
 
 ---
 ### Case-control and Data-driven Approaches
 
 .pull-left[.content-box-blue[
-**Case-control**
+**Case-control studies**
 {{content}}
 ]]
 --
@@ -245,12 +102,12 @@ class: middle, center
 --
 
 .pull-right[.content-box-red[
-**Data-driven**
+**Data-driven empirical methods**
 {{content}}
 ]]
 --
 
-- Identifies subgroups of symptoms or individuals based on patterns in data, rather than clinician judgement
+- Identifies subgroups of symptoms or individuals based on patterns in data, rather than diagnostic categories / clinician judgement
 {{content}}
 --
 
@@ -258,33 +115,19 @@ class: middle, center
 {{content}}
 --
 
-- Growing emphasis on data-driven EEG research to find new discoveries out of scope from traditional diagnostic categories (Loo et al., 2016; Keizer, 2019)
+- Growing emphasis on data-driven electroencephalography (EEG) research to find new discoveries out of scope from traditional diagnostic categories (Loo et al., 2016; Keizer, 2019)
+
 
 ---
-background-image: url("imgs/eeg_diag.gif")
-background-position: right
-background-size: 600px
+background-image: url("imgs/eeg_diag.png")
+background-position: top right
+background-size: 450px
 
-### Electroencephalography (EEG)
+### Electroencephalography (EEG) Data
 
-<br>
-<br>
-<br>
-<br>
 - Records electrical brain activity <br> using electrodes on the scalp
 
 - Signals represent cumulative activity <br> of rhythmic firing across networks <br> of many neurons <br>
-
-
-
-
-
----
-background-image: url("imgs/eeg.jpg")
-background-position: bottom right
-background-size: 500px
-
-### EEG Data: Strengths & Challenges
 
 --
 .pull-left[.content-box-blue[
@@ -328,702 +171,450 @@ background-size: 500px
 
 - High dimensionality 
   - Large number of channels & features
-- Often small sample sizes
+
+
+---
+
+#### Growing need for increased large scale research studies collecting data on brain, psychopathology and cognitive function
+
+--
+
+.pull-left[.content-box-red[
+**Longitudinal Adolescent Brain Study (LABS)**
+{{content}}
+]]
+--
+- Longitudinal cohort study of youth in the Sunshine Coast
+
+- Follows participants from age 12 - 17
+
+- Recruitment goal: 500 participants
+
+{{content}}
+--
+Thesis data scope:
+- 59 individuals aged 12 years (T1)
+
+- Resting state EEG, psychological distress, <br> sleep quality, cognitive function
+
+- Chapters 3 & 4
+
+--
+
+.pull-right[.content-box-green[
+**Healthy Brain Network (HBN)**
+
+{{content}}
+]]
+--
+- Large cross-sectional study in New York region
+
+- Participants aged 5-21
+
+- Recruited based on perceived clinical concern
+
+- Goal: Biobank of 10,000 participants
+
+{{content}}
+--
+Thesis data scope:
+
+- 503 participants aged 9-15
+
+- Pre-processed resting state EEG, <br> psychopathology and cognitive function
+
+- Chapters 5 & 6
+
 
 ---
 
 class: middle, center
 
-# Literature Review: Statistical Methods
-
-
+# Aims & Objectives
 ---
-background-image: url("imgs/example_psd.jpg")
-background-position:  bottom right
-background-size: 500px
 
-### EEG Frequency Decomposition
-
-.pull-left[.content-box-blue[
-Traditional frequency bands
-{{content}}
+.pull-left[.content-box-red[
+(1) Develop an end-to-end pipeline for EEG-based clusters in adolescents **(Ch 3)**
 ]]
---
 
-
-{{content}}
---
-
-- Delta (~0-4 Hz)
-- Theta (~4-8 Hz)
-- Alpha (~8-12 Hz)
-- Beta (~12-30 Hz)
-- Gamma (~30 + Hz)
-
-{{content}}
---
-
-Mental Health
-
-{{content}}
---
-
-
-- Alpha asymmetry in depression (Kaiser et al., 2018)
-
-{{content}}
---
-
-
-- Some mental disorders show <br> `r emo::ji("down_arrow")` low frequency (delta, theta), <br>`r emo::ji("up_arrow")` high frequency (alpha, beta, gamma)
-  - OCD, ADHD, Schizophrenia (Newson & Thiagarajan, 2019)
-  
 --
 .pull-right[.content-box-red[
-**Multitaper Analysis**
-{{content}}
+(1a) Using LABS data, examine associations with health measures. **(Ch 3 & 6)**
 ]]
+
 --
-
-- Suitable for non-stationary signals
-- Used widely in EEG research (Babadi and Brown, 2014; Prerau et al., 2017)
-- Good frequency specificity (Cohen, 2014)
-
----
-### Data Reduction: Principal Component Analysis
-
-.pull-left[.content-box-red[
-- Popular & widely used method for data reduction
-{{content}}
+.pull-left[.content-box-yellow[
+(2) Build Bayesian Model Averaging framework to combine clusters with probabilistic allocation & model-based uncertainty **(Ch 4)**
 ]]
---
-
-- Captures the essential patterns of variation in data projected onto principal components (eigenvectors & eigenvalues)
-
-{{content}}
---
-
-- Commonly applied in EEG data reduction
-  - Reduce frequency features for predicting neonatal seizures (Thomas et al., 2010)
-  - Reduce frequency band power for motor signals in BCI (Ke & Li, 2009)
 
 --
+.pull-right[.content-box-yellow[
+(2a) Assess clinical & applied utility of BMA features with case study using LABS EEG clusters **(Ch 4 & 6)**
+]]
 
+--
+.pull-left[.content-box-green[
+(3) Develop nested functional analysis framework for time series data including functional characteristics in latent states **(Ch 5)**
+]]
+
+--
+.pull-right[.content-box-green[
+(3a) Investigate associations between functional analysis outputs & health measures using HBN data **(Ch 5 & 6)**
+]]
+
+--
+.pull-left[.content-box-blue[
+(4) Replicate and compare feature extraction and clustering pipelines (1) and (3) across LABS and HBN data **(Ch 6)**
+]]
+
+--
 .pull-right[.content-box-blue[
-- Runs into difficulties with high dimensionality (Feng et al., 2012)
-  - Problematic as $P$ approaches $N$ `r emo::ji("thumbs_down")` `r emo::ji("dizzy_face")`
-
-{{content}}
+(4a) Explore cross-method, cross-sample replication of robust EEG phenotypes in adolescents using methods in (1) and (3) **(Ch 6)**
 ]]
---
 
-- Limited to summarise information based on the selected inputs
-  - In EEG context: manually calculated summary features
 
 
 ---
-background-image: url("imgs/eeg_fpca.jpg")
-background-position: bottom right
-background-size: 500px
+background-image: url("imgs/watercolour_crop_nologo.jpg")
 
-### Data Reduction: Functional Principal Component Analysis
+class: middle, center 
 
-.pull-left[.content-box-red[
+# Chapter 3
+# EEG-based clusters differentiate psychological distress, sleep quality and cognitive function in adolescents
 
-- Captures the essential patterns of variation in functional data in terms of scores on **eigenfunctions** (Ramsay et al., 2009)
-
-{{content}}
-]]
---
-
-- Capture information relating to a variety of summary features of interest with less difficulties around **high dimensionality**
-  
-{{content}}
---
-
-- A few nice examples with EEG
-  - Extract power components analogous to traditional frequency bands (Tenke & Keyser, 2005)
-  - Bayesian fPCA in spatiotemporal domain for EEG artifact location and removal (Margaritella et al., 2020)
+---
+### Chapter 3: Novel Contributions
 
 --
 
-.pull-right[.content-box-blue[
-Opportunities to extend in multiple functional domains (for EEG/biosignals)
+- First work to investigate phenotypes using unsupervised clustering of EEG data from a population sample of adolescents
 
-{{content}}
-]]
 --
 
-- 3D basis surfaces in time-frequency domain
+- New insights about the presence of resting state EEG phenotypes, and clear associations with psychological distress, sleep quality and cognitive function
 
-{{content}}
 --
 
-- Spatially across EEG channels to look at complex dynamic patterns of synchronisation & functional connectivity
+- Novel statistical pipeline implemented in **freely available open source software** (R and MATLAB) for clinicians and researchers to apply in their own work
 
-{{content}}
+
 --
 
-Under-utilised for EEG data; huge potential
+- SAGE Award for Best HDR Student Publication (Faculty of Science) 2022
+
+--
+
+- Published in _Biological Psychology_
+
+```{r out.width = 600}
+
+knitr::include_graphics("imgs/p1_biopsy_header.png")
+```
+
 
 ---
 
-### Unsupervised Clustering Methods
+### Chapter 3: Methods
+<center>
+```{r out.width = 800}
 
-- Identify subgroups in data without existing group labels/classifications
+knitr::include_graphics("imgs/P1Fig1.png")
+```
+</center>
+
+<!-- #### Data Scope -->
+<!-- - Resting state EEG data, single electrode -->
+<!-- - 59 individuals in LABS, 12 years old (M = 12.64, SD = 0.32) -->
+---
+### Chapter 3: Methods
+
+.pull-left[
+```{r out.width = 250}
+
+knitr::include_graphics("imgs/P1Fig2.png")
+```
+]
+
+
+
+.pull-right[
+
+**Features**
+
+- Power in canonical bands -- Delta (0-4 Hz), ..., Beta (12-16 Hz)
+
+- Total Power
+
+- Individual Alpha Frequency
+
+- Spectral Edge Frequency
+
+- Spectral Entropy
+
+
+**Principal Component Analysis**
+- 3 PCs explained 80.6% of the variance
+
+
+**Clustering**
+
+- k-means
+
+- Hierarchical Clustering
+
+- Gaussian Mixture Model
+]
+
+
+
+---
+
+### Chapter 3: Results
+
+
+
+
+.pull-left[<iframe src="imgs/plot_3d_km.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+.pull-right[<iframe src="imgs/plot_3d_hc_colourfix.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+.pull-left[<iframe src="imgs/plot_3d_gmm.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+
+---
+
+### Core clusters across algorithms
+
+<iframe src="imgs/plot_3d_core_only.html" width="1000" height="500" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
+
+
+---
+
+### Average frequency content across clusters
+
+<center>
+```{r out.width = 450}
+
+knitr::include_graphics("imgs/P1Fig5.png")
+```
+</center>
+
+---
+### Health measures across clusters
+<center>
+```{r out.width = 800}
+
+knitr::include_graphics("imgs/P1Fig6.png")
+```
+</center>
+---
+
+### Health measures across clusters - Bayesian regression models
+
+<center>
+```{r out.width = 800}
+
+knitr::include_graphics("imgs/P1Fig7.png")
+```
+</center>
+
+---
+
+#### Exciting preliminary results
+
+**Further questions of interest**
+
+-- 
+<br>
+<br>
+
+- Can we develop a better way to combine multiple clustering algorithms, incorporating model-based uncertainty?
+
+**(Chapter 4)**
 
 --
+<br>
+<br>
+
+- Can we use more sophisticated methods to characterise EEG, include temporal information, and avoid coarse canonical summary features?
+
+**(Chapter 5)**
+
+
+--
+
+<br>
+<br>
+
+- How robust are the phenotypes associated with these clusters? Do we find similar results using different samples, and different methods?
+
+**(Chapter 6)**
+
+
+
+---
+background-image: url("imgs/watercolour_crop_nologo.jpg")
+
+class: middle, center 
+# Chapter 4
+# _clusterBMA_: Bayesian Model Averaging for Clustering
+
+
+
+---
+
+### Chapter 4: Novel Contributions
+
+--
+
+- First implementation of Bayesian model averaging to combine solutions across multiple clustering algorithms
+
+--
+
+- Offers unique features for ensemble clustering including **quantification of model-based uncertainty** and probabilistic allocation to combined clusters
+
+--
+
+- Substantially better accuracy in benchmarking performance compared to other ensemble algorithms, particularly for high-dimensional data with low separation between clusters
+
+--
+
+- Implemented in open source & freely available **R package** for data scientists & practitioners to apply across various fields
+
+**github.com/of2/clusterBMA**
+
+--
+
+- Preprint has been cited
+- Trending on DeepAI
+- Used by researchers at UWA and US government agencies
+- Invited talk to SSA QLD
+
+--
+
+- Under review in _PLOS ONE_
+
+
+---
+
+
+## Which clustering algorithm?
+
+
+.pull-left[<iframe src="imgs/plot_3d_km.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+.pull-right[<iframe src="imgs/plot_3d_hc_colourfix.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+.pull-left[<iframe src="imgs/plot_3d_gmm.html" width="500" height="250" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
+
+
+---
+
+## Inconsistent clustering across algorithms
+
+<iframe src="imgs/plot_3d_core_yellow.html" width="1000" height="500" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
+
+
+---
+
+### Which clustering algorithm?
 
 - Different algorithms will emphasise different aspects of clustering structure
 
 --
 
 - Choosing one 'best' model often arbitrary, unclear choice
-  - Doesn't account for model-based uncertainty
 
 --
 
-- Value in combining/integrating across multiple algorithms
+  - `r emo::ji("right arrow")` **Inference not calibrated for model-based uncertainty**
 
----
-.pull-left[
-#### *k*-means
+--
 
-- 'Hard' clustering
-- Minimises within-cluster sums of squares]
-
-
-.pull-right[**k-means objective function** <br>
-$$J = \sum_{i = 1}^K (\sum_k{\lvert \lvert x_k - c_i \rvert \rvert ^2})$$]
+- Locking into one method loses insights offered by other methods about plausible clustering structure
 
 --
 
 .pull-left[
-#### Hierarchical Clustering (Ward's Method)
+```{r out.width=800}
 
-- 'Hard' clustering
-- Each observation starts out in its own cluster
-- Repeated pairwise fusion of clusters that minimises change in within-cluster sums of squares (Ward)]
+knitr::include_graphics("imgs/porque.gif")
 
-
-.pull-right[**Ward's objective function** <br>
-$$D(c_1,c_2) = \delta^2(c_1,c_2) = \frac{\lvert c_1 \rvert \lvert c_2 \rvert }{\lvert c_1 \rvert + \lvert c_2 \rvert} \lvert \lvert c_1 - c_2 \rvert \rvert ^2$$]
+```
+]
 
 --
 
-.pull-left[
-#### Gaussian Mixture Model
-- 'Soft' clustering
-- Models data as coming from a mixture of Gaussian distributions
-- Restrictive distribution ('thin tails')
-  - Tends to prioritise cluster compactness, may tend to 'overcluster']
+.pull-right[
+**BMA offers a nice framework for combining clustering solutions**
 
-.pull-right[**Mixture of multivariate Gaussians** <br>
-$$p(x_n|\mu, \Sigma, \pi,K) = \sum_{k=1}^K{\pi_k\mathcal{N}(x_n|\mu_k, \Sigma_k)}$$]
+  - simple
+  
+  - flexible
 
+  - intuitive 
+]
 
 ---
 
 
-### Combining Clustering Results
-
---
-
-#### Intersecting / Overlapping 'Core' Clusters
-- Identify consistent groupings
-- No allocation for inconsistently clustered points
-
---
-
-#### Bayesian Model Averaging
-
---
-
-- Weighted averaging of results by model quality
-- Quantification of model-based uncertainty
-
---
-
-$$P(\Delta | Y) = \sum_{l=1}^L (\Delta | Y, M_l)P(M_l|Y)$$
+### Combining Clustering Results with Bayesian Model Averaging
 
 --
 
 - Limited development for Clustering
   - Finite mixture models (Russell et al., 2015)
   - Naive Bayes classifiers (Santafe & Lozano, 2006)
-  
+  - Lacks implementation across multiple clustering algorithms
+
+--
+<br>
+
+**Advantages**
+
+- `r emo::ji("cool")` Weighted averaging of results incorporating model quality / goodness of fit
+
 --
 
-- Lacks implementation across multiple clustering algorithms
+- `r emo::ji("100")` Intuitive framework for **probabilistic** inferences combining results from **different clustering algorithms**
+
+--
+
+- `r emo::ji("wow")` Each input solution can have a different number of clusters $K$
+
+--
+
+- `r emo::ji("sunglasses")` **Quantify model-based uncertainty and enable more robust inferences** calibrated accordingly
+
+
+
 
 ---
-background-image: url("imgs/cat_eeg_crop.png")
-background-position: center
-background-size: contain
 
-class: top, left, inverse
+### Bayesian Model Averaging: Basics
 
 <br>
 <br>
-<br>
-<br>
-# How shall I skin thee? <br> Let me count the ways...
-
-
----
-
-background-image: url("imgs/cat_knife_1.jpg")
-background-position: center
-background-size: contain
-
-class: top, left, inverse
-
----
-
-background-image: url("imgs/cat_knife_2.jpg")
-background-position: center
-background-size: contain
-
-class: top, left, inverse
-
----
-
-class: middle, center 
-
-# Research Plan
-
-
-
----
-### Research Streams
-
-**MPhil**
---
-.full-width[.content-box-red[**Stream 1**: Data reduction with PCA using summary features calculated from electroencephalography (EEG) data, and integrated robust clustering of individuals]]
-<br>
---
-**PhD**
---
-.full-width[.content-box-blue[**Stream 2**: Data reduction with functional PCA in frequency, time-frequency & spatial domains for EEG data, and integrated robust clustering of individuals]]
---
-.full-width[.content-box-green[**Stream 3**: Integrative modeling framework to combine and find intersections between EEG analyses and other types of neuroimaging data]]
-
----
-### Main Objectives (methodological focus)
-
-.pull-left[
-.content-box-blue[**Stream 1 (MPhil) - PCA focus**
-
-{{content}}
-]
-]
---
-
-- M1.1: Data Reduction with PCA
-
-{{content}}
---
-
-- M2: Integrated Robust Clustering
-  - M2.1: Intersecting 'core' clusters across multiple clustering algorithms
-  - M2.2: Extending Bayesian Model Averaging for clustering
-
-{{content}}
---
-
-- M3: Spatial and Temporal Extensions to Clustering
-  - M3.1: Extending work under M2 spatially across multiple EEG channels
-  - M3.2: Extending work under M2 temporally across multiple LABS timepoints
-
-
---
-
-.pull-right[
-.content-box-red[**Stream 2 (PhD) - fPCA focus**
-
-{{content}}
-]
-]
---
-
-- M1.2: Data reduction with fPCA
-
-{{content}}
---
-
-- M4: Integrated Robust Clustering
-
-{{content}}
---
-
-- M5: Spatial and Temporal Extensions to Clustering
-
-{{content}}
---
-
-**Stream 3 (PhD)**
-
-{{content}}
---
-
-- M6: Integrative Models for Multimodal Neuroimaging Data
-
----
-
-### Applied components
-
-
-.pull-left[
-.content-box-blue[**Stream 1 (MPhil)**
-
-{{content}}
-]
-]
---
-
-- M2a: Relating Health Outcomes to EEG-based Clustering (PCA Stream)
-  - M2a.1: Compare health outcomes between integrated core clusters
-  - M2a.2: Compare health outcomes between BMA clusters (propagate model-based uncertainty)
-
-{{content}}
---
-
-- M3: Spatial and Temporal Extensions to Clustering (PCA Stream)
-  - M3a.1: Relate health outcomes to regional patterns of brain activity & functional connectivity
-  - M3a.2: Relate longitudinal health outcomes to PCA-based clustering over multiple LABS time points
-
-
---
-
-.pull-right[
-.content-box-red[**Stream 2 (PhD)**
-
-{{content}}
-]
-]
---
-
-- M4a: Relating Health Outcomes to EEG-based Clustering (fPCA Stream)
-
-{{content}}
---
-
-- M5a: Relating Health Outcomes to Spatial and Temporal Extensions (fPCA Stream)
-
-{{content}}
---
-
-**Stream 3 (PhD)**
-
-{{content}}
---
-
-- M6a: Relating Health Outcomes to Integrative Multimodal Models (Integration
-Stream)
-
----
-### Novel Contributions
-
---
-#### Methodological `r emo::ji("nerd_face")`
-
---
-
-- Extensions to Bayesian Model Averaging to enable integration of results across multiple clustering algorithms
-
---
-
-- Extensions to fPCA for biosignals data (frequency, temporal, spatial) (Stream 2)
-
---
-
-- Improve robustness of candidate integrative models for use with multi-modal, high-dimensional, small sample size data (Stream 3)
-
---
-
-**Scaleable, flexible & open source analysis pipelines**
-
---
-
-- MATLAB & R Code for: automated EEG pre-processing; multitaper analysis; PCA & integrated robust clustering
-
---
-
-- R package for BMA across multiple clustering algorithms
-
----
-### Novel Contributions
-
---
-
-#### Applied `r emo::ji("sunglasses")`
-
---
-
-- First work to implement unsupervised clustering using EEG data from a population sample of adolescents
-
---
-
-- New insights about spatiotemporal brain dynamics/features from fPCA extensions in multiple functional dimensions (Stream 2)
-
---
-
-- New insights about correspondence between EEG-based analyses and other brain measures in this age range (Stream 3)
-
---
-
-- Novel framework for clinical risk prediction to support early intervention for brain development & mental health in adolescence
-
---
-
-
-
-
-
-
-
----
-
-
-class: middle, center 
-
-## Progress to Date: EEG-based Integrated Clustering 
-#### Paper 1 (Objectives 1.1, 2.1 & 2a.1)
-
-
----
-### Progress to Date: EEG-based Integrated Clustering 
-
---
-
-**Data scope**
-
---
-
-- Cross-sectional data (time point 1)
-
---
-
-- 59 participants (age 12 years)
-
---
-
-- Resting state, eyes closed EEG
-
---
-
-- One channel (vertex Cz)
-
---
-
-- Frequency domain analyses
-
- 
---
-
-**Research Questions**
---
-
-- From PCA results, which combinations and contrasts between EEG frequency features explain the most variability across individuals?
-
---
-
-- How can results across different unsupervised clustering algorithms be combined to identify consistently separated core clusters?
-
---
-
-- How do individuals across clusters vary in terms of EEG characteristics and health outcomes
-
-
----
-
-### Methods
-
-- Data Preparation: Automated Pre-processing `r emo::ji("exclamation")` `r emo::ji("star")`
-
---
-
-- Data Preparation: Multitaper Analysis & Feature Selection
-  - Relative power in 4 Hz bands (delta, theta, alpha, low beta)
-  - Total power
-  - Individual Alpha Frequency
-  - 95% Spectral Edge Frequency
-  - Spectral Entropy
-
---
-
-- Data Reduction: PCA
-
---
-
-- Unsupervised Clustering Methods
-  - k-means
-  - Hierarchical clustering (Ward's method)
-  - Gaussian Mixture Model
-
---
-
-- Integrating Results to find Core Clusters
-  - Find well-differentiated groups consistent across methods
-
-
-
----
-### Results: PCA
-
-.center2[
-```{r PCA_results_1, echo=F, out.width="1200px"}
-
-knitr::include_graphics("imgs/pca_scree.jpg")
-```
-]
----
-### Results: PCA
-.center2[
-```{r PCA_results_2, echo=F, out.width="1600px"}
-
-knitr::include_graphics("imgs/pca_summary.jpg")
-```
-]
-
-
-
----
-
-### Results: PCA
-
-.center2[
-```{r PCA_results_3, echo=F, out.width="1600px"}
-
-knitr::include_graphics("imgs/pca_results.jpg")
-```
-]
-
-
----
-
-class: center, middle
-
-## Results: Unsupervised clustering
-
-
----
-
-.pull-left[<iframe src="imgs/plot_3d_km.html" width="620" height="320" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
-
-.pull-right[<iframe src="imgs/plot_3d_hc_colourfix.html" width="620" height="320" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
-
-.pull-left[<iframe src="imgs/plot_3d_gmm.html" width="620" height="320" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>]
-
-
-
-
----
-### Results: Core Clusters
-
-<iframe src="imgs/plot_3d_core_only.html" width="1200" height="600" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
-
-
-```{r out.width = 200}
-
-knitr::include_graphics("imgs/core_numbers.jpg")
-```
-
----
-background-image: url("imgs/core_psds_combined.png")
-background-position: bottom
-background-size: contain
-
-
-
----
-### Next Steps
-
-- Compare health outcome measures between core clusters 
-
---
-
-  - Use a Bayesian approach to compare health outcomes between groups, especially given small sample size
-
---
-
-  - May need to wait for more LABS data to enable stronger inferences about differences in health outcomes between clusters
-  
---
-
-Complete and submit Paper 1 to applied journal e.g. *Evidence-Based Mental Health (BMJ)* (April 2021)
-
-
----
-
-
-class: middle, center 
-
-## Progress to Date: Extending Bayesian Model Averaging for Clustering <br>
-#### Paper 2 (Objectives 2.2 & 2.2a)
-
-
-
----
-
-### Extending Bayesian Model Averaging for Clustering
-
---
-
-Inference based on results from a single 'best' model ignore the uncertainty that arises from model selection
-
---
-
-- *M*-open scenario: the appropriate model class is not known in advance, but is determined iteratively as the analysis proceeds (Bernardo & Smith, 2009)
-
---
 
 $$P(\Delta | Y) = \sum_{l=1}^L (\Delta | Y, M_l)P(M_l|Y)$$
 
+
+
 --
+<br>
+<br>
 
-- For valid inference in the clustering context, $\Delta$ should have the same meaning for all models and all $k$, and be invariant to labelling of $k$ (Hoeting 2002)
-
-
-Where
 $$P(M_l|Y) = \frac{P(Y|M_l)P(M_l)}{\sum_{l=1}^L P(Y|M_l)P(M_l)}$$
 
---
-
-- Enables more robust inference through probabilistic combination of outputs from multiple models
-
-
 
 ---
 
-### Extending Bayesian Model Averaging for Clustering
-
-Previous work (Russell et al., 2015) has implemented BMA for model averaging across finite mixture models
-
---
-
-- Each clustering model $M_l$ represented with pairwise similarity matrix $S^l$
-  - each element $s_{ij}$ represents the probability that data points $i$ and $j$ belong to the same cluster in that model
-  - **invariant to labelling and number of clusters**
-  
---
-
-```{r}
-
-knitr::include_graphics("imgs/similarity_matrices.jpg")
-
-```
-
-
----
-
-### BMA for Mixture Models - BIC weighting
-
+#### BMA for Mixture Models - BIC weighting
 - $P(Y|M_l)$ typically involves a difficult/intractable integral and is often approximated for many applications (Fragoso et al., 2018)
 
 --
 
-- Russell et al. (2015) weight results from multiple GMMs according to BIC
+- **Russell et al. (2015)** weight results from multiple GMMs according to BIC
 
 $$P(M_l \lvert Y) \approx \frac{exp(\frac{1}{2}{BIC}_l )}{\sum_{l=1}^L { exp(\frac{1}{2} BIC_{l}) }}$$
 
@@ -1059,19 +650,23 @@ background-size: 600px
 ]
 --
 
-- Typically measure compactness and/or separation of clusters
-
-{{content}}
---
-
 - Choose between candidate models with different numbers of clusters $k$
 
 {{content}}
 --
 
-- Interpreted similarly to model evidence
+- Interpreted similarly to marginal likelihood/model evidence
+
+{{content}}
+--
+
+- Typically measure compactness and/or separation of clusters
+
+{{content}}
+--
+Compared to BIC...
   - Agnostic to clustering algorithm
-  - Most do not require likelihood term
+  - Typically do not require likelihood term
 
 ---
 background-image: url("imgs/separation_compactness.png")
@@ -1086,11 +681,6 @@ BIC for GMM driven by **Multivariate Gaussian density:**
 $$\mathcal{N}(x|\mu, \Sigma) = \frac{\exp\left\{ -\frac{1}{2} (y-\mu)^T
                  \Sigma^{-1}(y-\mu)\right\}}{|\Sigma|^{\frac{1}{2}} (2 \pi)^{\frac{D}{2}}}$$
                  
---
-
-**Xie-Beni index**
-- Ratio of separation to compactness (maximise)
-$$XB = \frac{\sum_i{\sum_{x \in C_i}d^2(x,c_i)}}{n(\min_{i, j \neq i} d^2(c_i,c_j))}$$
 
 --
 
@@ -1100,281 +690,547 @@ $$CH = \frac{\sum_i{n_i d^2(c_i,c)/(NC-1)}}{\sum_i{\sum_{x \in C_i}d^2(x,c_i)/(n
 
 --
 
+**S_Dbw Index**
+
+- (add detail here:)
 
 
-- XB and CH have complementary strengths (Aggarwal & Reddy, 2012)
+-- 
+
+- CH and S_Dbw indices are both well validated in the context of 
 
 ---
 
 ### New proposed weighting / approximation for posterior model probability
-<br>
+
+CH and S_Dbw indices
+- conceptually and mathematically similar to BIC
+- Unlike BIC, can be calculated + directly compared across different clustering algorithms
+
+--
+
 New proposed weight:
-$$\mathcal{W}_m = \frac{\frac{1}{CH_{m}}}{\sum_{m=1}^M {\frac{1}{CH_{m}}}} + \frac{XB_m}{\sum_{m=1}^M {XB_{m}}}$$
+<!-- $$P(Y \lvert \mathcal{M}_m) \approx \hat{\mathcal{W}}_m \coloneqq \begin{cases} -->
+<!--   \frac{\mathcal{W}_m}{\sum_{m'=1}^M \mathcal{W}_{m'}} & \text{if $\mathcal{W}_m$ is to be maximised} \\ -->
+<!--   \\ -->
+<!--   \frac{\frac{1}{\mathcal{W}_m}}{\sum_{m'=1}^M \frac{1}{\mathcal{W}_{m'}}} & \text{if $\mathcal{W}_m$ is to be minimised,} -->
+<!--   \end{cases}$$ -->
+
+
+.center[
+```{r out.width=800}
+knitr::include_graphics("imgs/cbma_eqn_wt.png")
+```
+]
+
+
+
+<br>
+
+--
 
 Approximate posterior model probability for weighted averaging:
-$$P(M_m \lvert Data) \approx \frac{\mathcal{W}_m}{\sum_{m=1}^M \mathcal{W}_m}$$
+$$P(Y \lvert \mathcal{M}_m) \approx \hat{\mathcal{W}}_m = \frac{\mathcal{W}_m}{\sum_{m'=1}^M \mathcal{W}_{m'}}$$
 
 
 ---
-### Next Steps
 
---
-Simulation Study
 
-- Investigate performance with simulated clustering datasets
+### Consistent quantity $\Delta$ - Similarity matrices
 
---
-
-Case Study
-
-- Demonstrate utility for leveraging insights from multiple clustering methods (LABS EEG data)
-
+Previous work (Russell et al., 2015) has used pairwise similarity matrices as $\Delta$ for each model
 
 --
 
-Submit paper to *Advances in Data Analysis and Classification* in June 2021
+- To get similarity matrix, multiply allocation matrix by its transpose:
+
+$$S_m = A_m A_m^T$$
+
+- **invariant to number and labelling of clusters across solutions**
 
 --
 
-Publish R package for BMA across multiple clustering algorithms
+.center[
+```{r out.width=800}
+knitr::include_graphics("imgs/a_to_s.png")
+```
+]
+
+
 
 
 ---
+
+### Consensus matrix
+
+.center[
+```{r out.width=600}
+knitr::include_graphics("imgs/eeg_consensus.jpg")
+```
+]
+
+\begin{equation}
+  C = {\sum_{m=1}^M\hat{\mathcal{W}}_m S_m}.
+\end{equation}
+
+---
+
+### Consensus matrix `r emo::ji("right arrow")` Matrix factorisation `r emo::ji("right arrow")` Cluster allocation probabilities
+
+- Symmetric Simplex Matrix Factorisation (SSMF; Duan, 2020) to get $N \times  K$ allocation matrix $A_m$ from $N \times N$ consensus matrix $C$
+
+- Generates probabilistic cluster allocations from pairwise probabilities
+
+--
+
+.center[
+```{r out.width=700}
+knitr::include_graphics("imgs/c_to_a.png")
+```
+]
+--
+
+- Includes L2 regularisation step to reduce overfitting & redundant clusters
+
+
+
+---
+
+
 class: center, middle
 
-# Upcoming Work
+
+## Case study: Clustering adolescents based on resting state EEG recordings
+
 
 ---
-background-image: url("imgs/func_conn.jpg")
-background-position: right
-background-size: 500px
 
-### MPhil Research Plan: Objective 3.1
+## Model results
 
-#### Spatial extensions
+
+.center[
+```{r out.width=1000}
+knitr::include_graphics("imgs/clusters_scrnshot.jpg")
+```
+]
+
+---
+
+## Model results `r emo::ji("right arrow")` Similarity matrices
+
+.pull-left[**k-means** $\hat{\mathcal{W}}_m = 0.36$
+<br>
+```{r out.width=300}
+knitr::include_graphics("imgs/km_similarity.png")
+```
+]
+
+.pull-right[**HC** $\hat{\mathcal{W}}_m = 0.27$
+<br>
+```{r out.width=300}
+knitr::include_graphics("imgs/hc_similarity.png")
+```
+]
+
+.center[**GMM** $\hat{\mathcal{W}}_m = 0.37$
+<br>
+```{r out.width=300}
+knitr::include_graphics("imgs/gmm_similarity.png")
+```
+]
+
+
+
+---
+
+## Model results `r emo::ji("right arrow")` Similarity matrices `r emo::ji("right arrow")` Consensus matrix
+
+```{r out.width=800}
+knitr::include_graphics("imgs/eeg_consensus.jpg")
+```
+
+
+
+---
+
+## BMA Clusters with allocation uncertainty
+
+.center[
+<iframe src="imgs/eeg_3d_BMA_size_uncertainty_301122.html" width="750" height="400" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
+]
+
+
+
+- **Uncertainty can be propagated forward for further analysis in a Ba
+yesian framework**
+
+
+---
+
+### Benchmarking study: Feature comparison with other ensemble approaches
+
+
+```{r out.width=800}
+knitr::include_graphics("imgs/cbma_feature_table.jpeg")
+```
+
+
+---
+### Benchmarking study: Accuracy comparison
+
+- 9 clustering algorithms
+- Simulated data with differing dimensions (2, 10, 50) and separation (high, medium, low)
+- 10 simulated datasets each combination of dimensions X separation
 
 --
-.pull-left[
-Select & calculate expanded feature set across multiple channels
-- Functional connectivity measures
-- Asymmetry measures (Duffy et al, 1996; Jin et al., 2020)
+
+```{r out.width=700}
+knitr::include_graphics("imgs/benchmarking_results_table.jpeg")
+```
+
+
+---
+
+class: center, middle
+
+
+## A quick demo
+
+---
+
+<iframe src="imgs/demo_recording_1080_tripspeed_changed.mp4" width="1000" height="650" scrolling="yes" seamless="seamless" frameBorder="0"> </iframe>
+
+
+---
+
+background-image: url("imgs/bernie_meme.jpg")
+background-position: center
+background-size: contain
+
+---
+### Limitations & Future Directions
+
+
+- Comparison & sensitivity analysis of alternative internal validation metrics to approximate $P(\mathcal{M}_m \lvert Y)$
+
+--
+
+- Fully Bayesian extension:
+* estimate probability distributions instead of point estimates for cluster allocation
+* incorporate Bayesian clustering solutions as inputs alongside frequentist clustering models 
+
+
+
+
+---
+background-image: url("imgs/watercolour_crop_nologo.jpg")
+
+class: middle, center
+
+# Chapter 5
+# Functional analysis within latent states for neuroscientific data: Linking resting state brain activity, psychopathology and cognitive function in young people
+
+
+
+---
+
+
+### Chapter 5: Novel Contributions
+
+--
+
+- Novel nested framework for functional data analysis (FDA) of functional time series data
+
+--
+
+- Offers integrated analysis of functional latent states and temporal dynamics using FHMM, and functional characteristics stratified by latent states using FPCA
+
+--
+
+- More nuanced insights into important characteristics of EEG variation relative to traditional analyses, less reliant on flawed assumptions and canonical features
+
+--
+
+- Using HBN data, Bayesian regression models show that FHMM and FPCA outputs together are substantially associated with measures of psychopathology and cognitive function
+
+--
+
+- Lays a foundation for more sophisticated phenotype identification including temporal and functional characteristics (Chapter 6)
+
+-- 
+
+- Implemented in open source & freely available software in R for practitioners to apply across various fields
+
+--
+
+- In preparation for submission to _Statistical Methods in Medical Research_
+
+
+
+---
+
+### Functional Data Analysis
+
+- Benefits for neuroscience data
+
+- Capture influential characteristics across the whole functional domain of interest
+---
+
+### Functional Hidden Markov Models
+
+
+- screenshot from Martino
+
+- Similar to regular HMM, but emission function is not a PDF --> function based on L2 distance measure between each curve and the state's mean curve (centroid)
+
+---
+
+background-image: url("imgs/eeg_fpca.jpg")
+background-position: bottom right
+background-size: 500px
+
+
+### Functional Principal Component Analysis
+
+.content-box-red[
+
+- Captures the essential patterns of variation in functional data in terms of scores on **eigenfunctions** (Ramsay et al., 2009)
 
 {{content}}
 ]
 --
 
-- With expanded spatial feature set, implement PCA and robust clustering from Objective 2
-
----
-### MPhil Research Plan: Objective 3.2
-
-#### Temporal extensions
-
---
-
-- Apply pipelines from Objectives 2 and 3 across multiple timepoints
-  - Examine changes in cluster structure & membership over time
+- Capture information relating to a variety of summary features of interest with less difficulties around **high dimensionality**
   
-```{r out.width=600}
-knitr::include_graphics("imgs/cluster_structure.png")
-```
+{{content}}
+--
+
+- A few nice examples with EEG
+  - Extract power components analogous to traditional frequency bands (Tenke & Keyser, 2005)
+  - Bayesian fPCA in spatiotemporal domain for EEG artifact location and removal (Margaritella et al., 2020)
 
 --
-<br><br>
+
+---
+
+
+
+### Chapter 5: Methods
+
+- _flawless_: (**F**unctiona**L** **A**nalysis **W**ithin **L**at**E**nt **S**tate**S**)
+
 ```{r out.width=600}
-knitr::include_graphics("imgs/cluster_membership.png")
-
+knitr::include_graphics("imgs/flawless_model_diagram_updated.png")
 ```
-
 
 
 ---
-### MPhil Research Plan: Objective 3.2
 
-#### Temporal extensions
---
+### FHMM - Latent State Centroids
 
-- Implement longitudinal clustering / trajectory analysis to identify longitudinal paths of EEG profiles through adolescence
+```{r out.width=700}
+knitr::include_graphics("imgs/FHMM_centroids_230423.png")
+```
 
---
+
+---
+
+### FHMM - Latent State Occupancy
 
 ```{r out.width=400}
-knitr::include_graphics("imgs/mfuzz.png")
+knitr::include_graphics("imgs/FHMM_Venn_100323_copy.png")
 ```
 
---
-
-- Growth mixture models
-  - Applied to developmental mental health data (Muthen, 2006; Connell & Frye, 2006)
-  
---
-
-Exemplar work: "Methods for personalised predictive modelling of developmental milestones for children with disabilities" (Gilholm, 2020)
-  - Longitudinal clustering methods for developmental trajectories
-  
-
+Most common combinations:
+- State 1 only (25.6\%)
+- States 1 and 2 (21.5\%)
+- State 2 only (9.3\%)
+- States 3 and 4 (6.4\%)
+- State 3 only (6.0\%)
+- State 4 only (5.6\%).
 ---
-### PhD Research Plan: Stream 2 (fPCA)
 
-- **PCA-based approach is limited**
+### FHMM - Latent State Occupancy
 
---
+```{r out.width=200}
+knitr::include_graphics("imgs/histograms_230423.png")
+```
 
-  - Manual selection of features
-  
---
 
-  - Curse of dimensionality - limited scope
+.pull-right[
+- Most visit 1 (n = 234; 46.5%) or 2 (n = 205; 40.8%) latent states
 
---
-
-- **fPCA is under-utilised for EEG data and has exciting potential**
-
---
-
-  - No requirement for choosing a priori features of interest
-
---
-
-  - Reveal insights about complex patterns of dynamic brain activity across multiple functional domains (frequency, temporal & spatial)
-
---
-
-  - Identify novel data features beyond scope of traditional analyses
-
+- A majority (n = 479; 95.2%) make between 0 and 4 transitions between states over the recording period.
+]
 ---
-background-image: url("imgs/3d_fpca.jpg")
-background-position: top right
-background-size: 400px
 
-### PhD Research Plan: Stream 2 (fPCA)
 
---
 
-**M1.2 & M4**: Frequency domain, cross-sectional
+### Comparing health measures between individuals with dominant latent states
 
-- **Tenke & Kayser (2005)**
-  - Frequency domain fPCA to identify spectral power components
 
---
-
-**M5.1**: Spatial extensions
-- Asymmetry & regional activity patterns
-
-- **Margaritella et al. (2020)**
-  - Bayesian fPCA with EEG in frequency domain; spatial clustering across channels
-
---
-
-**M5.2**: Time-frequency extensions
-- Dynamic patterns of connectivity & synchronisation
-
-- **Hasenstab et al. (2017)**
-  - fPCA with EEG combining experimental and longitudinal time scales (Task-based, ERP)
+```{r out.width=800}
+knitr::include_graphics("imgs/FHMM_fingerprints_100323_copy.png")
+```
 
 
 ---
 
-### Research Plan: Stream 3 (Integration)
+
+### Bayesian regression for _flawless_ outputs and health measures
 
 --
 
-Intersections between EEG and other neuroimaging types
+- Bayesian regression models indicated substantial associations between:
+
+* Latent state temporal characteristics
+
+* **Functional frequency characteristics within states (FPCA scores)**
+
+* Health measures relating to psychopathology & cognitive function
 
 --
 
-Novel hypothesis generation - collaboration with LABS investigators
-
---
-
-- EEG functional connectivity compared to structural connectivity from Diffusion Tensor Imaging
-
---
-
-- EEG asymmetry measures compared to brain region volumes across hemispheres from structural MRI
-
---
-
-**Candidate methods:**
-
---
-
-- Dynamic Bayesian Networks
-
---
-
-- Bayesian Hierarchical Models
+- Captures novel and nuanced information about influential characteristics and variation between individuals for resting state EEG, which are associated with important health outcomes
 
 
 
 ---
 
-class: center, middle
+background-image: url("imgs/watercolour_crop_nologo.jpg")
 
-# Research Timeline
-
----
-background-image: url("imgs/timeline.jpg")
-background-position: top
-background-size: contain
-
-
+class: middle, center 
+# Chapter 6
+# Data-driven phenotypes of resting state brain activity in adolescents: Cross-method, cross-sample replication and extension using functional analyses
 
 
 ---
 
-### Publications
-
-
-- Paper 1: EEG-based clusters in a population sample of adolescents (applied focus)
-  - Objectives M1.1, M2.1, M2a.1; Anticipated submission April 2021
-  - Target Journal: *Evidence-Based Mental Health (BMJ)*
-
-- Paper 2: Extending BMA for multiple clustering algorithms (methods focus)
-  - Objective M2.2, M2a.1; Anticipated submission June 2021
-  - Target Journal: *Advances in Data Analysis and Classification*
-  
---
-
-(if successful in Articulation)
+### Chapter 6: Novel Contributions
 
 --
 
-- Paper 3: Extending fPCA for biosignals in multiple functional domains (methods focus)
-  - Objectives M1.2, M4, M5; Anticipated submission February 2022
-  - Target Journal: *Statistics in Medicine*
-  
+- Comprehensive replication and comparison of methods in Chapters 3 and 5, generating clusters for each using _clusterBMA_ from Chapter 4
+
 --
 
-- Paper 4: Mapping longitudinal trends in EEG to structural and functional MRI measures (methods & applied)
-  - Objectives M3, M5, M6; Anticipated submission September 2022
-  - Target Journal: *Frontiers in Neuroscience*
+- Cross-sample replication of phenotypes identified with method from Chapter 3, using HBN data
 
-  
+--
+
+- Cross-method replication and *extension* of phenotypes based on functional analysis outputs from Chapter 5
+
+--
+
+- Exciting findings - novel evidence of robust phenotypes for resting state EEG
+
+--
+
+- Replication indicates more substantial evidence & lays foundation for clinical utility in the context of personalised healthcare and risk prediction
+
+--
+
+- In preparation for submission to _Nature Neuroscience_ 
 
 ---
 
-#### Conferences
-- QLD AI Hub Medical Datathon 2020
-- Submitted abstract to ANZSC 2021
+Pipeline 1 (Chapter 3): Time-averaged summary features
+
+- add step list
 
 --
 
-#### Coursework
-- Advanced Information Research Skills (IFN001) - March 2020
-- Minor Project (MXN401) - Semester 1, 2020
-- Modern Statistical Computing Techniques (MXN442) - Semester 2, 2020
-- Advanced Statistical Data Analysis (MXN600) - Semester 2, 2020
+Pipeline 2 (Chapter 5): _flawless_ analysis outputs
 
+
+- add step list
 
 --
 
-#### Other Scholarly Activities
-- Submitted paper with ANU epidemiology colleagues to *Environmental Health Perspectives* (first author)
-- Co-Chair of BRAG Group, **July 2020 - Present**
-- Wellbeing Officer, SEF HDR Society **August 2020 - Present**
-- Host of fortnightly HDR wellbeing workshop "Peers & Pizza" **October 2020 - Present**
+3 clustering algorithms, combined with _clusterBMA_
+---
 
+### Refresher: Frequency content across clusters from Chapter 3 (LABS)
+
+
+```{r out.width=400}
+knitr::include_graphics("imgs/p1_Fig5.png")
+```
+
+---
+
+### Replication of Chapter 3 clusters in HBN data
+
+```{r out.width=400}
+knitr::include_graphics("imgs/psds_p1_summary_080423.png")
+```
+
+---
+
+### Comparison of time-averaged summary features between LABS and HBN clusters
+
+```{r out.width=600}
+knitr::include_graphics("imgs/replication_radar_plots_220423.png")
+```
+
+---
+
+### Health characteristics across Pipeline 1 clusters (time-averaged summary features)
+
+```{r out.width=600}
+knitr::include_graphics("imgs/fingerprints_p1_pipeline_230423.png")
+```
+
+
+---
+
+### Comparison of time-averaged clusters and FHMM Centroids
+
+```{r out.width=600}
+knitr::include_graphics("imgs/FHMM_centroids_100323_copy.png")
+```
+
+---
+
+### Clustering _flawless_ analysis outputs (Pipeline 2)
+
+
+- need to add table of cluster characteristics
+
+---
+
+### Health measures across phenotypes from _flawless_ outputs  (Pipeline 2)
+
+```{r out.width=600}
+knitr::include_graphics("imgs/fingerprints_p3_pipeline_230423.png")
+```
+
+
+
+---
+
+
+---
+
+# Summary
+
+
+
+---
+
+# Limitations
+
+
+
+
+---
+# Future Directions
+
+
+
+
+---
+# Acknowledgements
 
 ---
 
@@ -1457,121 +1313,43 @@ Wu, W., Nagarajan, S., and Chen, Z. (2015). Bayesian Machine Learning: EEGMEG si
 
 ---
 
-class: thanks-slide, middle, center
+.pull-left[
+#### *k*-means
 
-# Appendices
-
----
-class: middle, center
-
-# Appendix: Internal Validation Indices <br> (choosing *k* for each clustering algorithm)
-
----
-background-image: url("imgs/optimal_k_plots.png")
-background-position: middle
-background-size: contain
-
----
-### Appendix: Frequentist ANOVA power analysis
-
-  - with: 
-    - n = ~9 
-    - across 5 groups
-    - with 80% power
-    
-Frequentist one-way ANOVA could only detect an effect size *f > 0.55* = "very large" effect size according to Cohen (1988)
+- 'Hard' clustering
+- Minimises within-cluster sums of squares]
 
 
----
-background-image: url("imgs/bc_ch_complement.jpg")
-background-position: middle
-background-size: contain
+.pull-right[**k-means objective function** <br>
+$$J = \sum_{i = 1}^K (\sum_k{\lvert \lvert x_k - c_i \rvert \rvert ^2})$$]
 
-### Appendix: XB and CH strengths
-
-
-
----
-background-image: url("imgs/eeg.jpg")
-background-position: bottom left
-background-size: 400px
-
-## EEG Data: Resting State & Task-based
-
-.pull-left[.content-box-blue[
-**Task-based**
-
-- records EEG during a specific task setup (e.g. Auditory Oddball, AXCPT)
-
-- requires controlled timing and laboratory conditions
-
-- requires more manual cleaning/pre-processing and segmentation of data around event timings
-
-]
-]
 --
-.pull-right[.content-box-red[
-**Resting State**
 
-- participants typically asked to 'just relax and do nothing' or similar
+.pull-left[
+#### Hierarchical Clustering (Ward's Method)
 
-- eyes open or eyes closed
+- 'Hard' clustering
+- Each observation starts out in its own cluster
+- Repeated pairwise fusion of clusters that minimises change in within-cluster sums of squares (Ward)]
 
-- easier for automated pre-processing -- more scaleable
 
-- more flexibility to move between frequency and time-frequency analyses
+.pull-right[**Ward's objective function** <br>
+$$D(c_1,c_2) = \delta^2(c_1,c_2) = \frac{\lvert c_1 \rvert \lvert c_2 \rvert }{\lvert c_1 \rvert + \lvert c_2 \rvert} \lvert \lvert c_1 - c_2 \rvert \rvert ^2$$]
 
-- easier to implement in a clinical setting
-    
-    
-]]
+--
 
+.pull-left[
+#### Gaussian Mixture Model
+- 'Soft' clustering
+- Models data as coming from a mixture of Gaussian distributions
+- Restrictive distribution ('thin tails')
+  - Tends to prioritise cluster compactness, may tend to 'overcluster']
+
+.pull-right[**Mixture of multivariate Gaussians** <br>
+$$p(x_n|\mu, \Sigma, \pi,K) = \sum_{k=1}^K{\pi_k\mathcal{N}(x_n|\mu_k, \Sigma_k)}$$]
 
 
 ---
-class: middle, center
-
-## Appendix: Health Outcomes & Core Clusters
-
-
-
----
-background-image: url("imgs/boxplot_k10.jpg")
-background-position: bottom
-background-size: contain
-
-### Distress: K10
-
----
-background-image: url("imgs/boxplot_sphere12.jpg")
-background-position: bottom
-background-size: contain
-
-### Distress: SPHERE-12
-
----
-background-image: url("imgs/boxplot_compasw.jpg")
-background-position: bottom
-background-size: contain
-
-### Wellbeing: COMPAS-W
-
----
-background-image: url("imgs/boxplot_sidas.jpg")
-background-position: bottom
-background-size: contain
-
-### Suicidality: SIDAS
-
----
-background-image: url("imgs/boxplot_psqi.jpg")
-background-position: bottom
-background-size: contain
-
-### Sleep quality: PSQI
----
-
-
 
 
 
