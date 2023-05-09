@@ -1040,7 +1040,6 @@ knitr::include_graphics("imgs/FPCA_2.jpeg")
 ```
 </center>
 
-
 ---
 
 ### _flawless_  analysis - Overview
@@ -1059,6 +1058,14 @@ knitr::include_graphics("imgs/flawless_model_diagram_updated.png")
 knitr::include_graphics("imgs/FHMM_centroids_230423.png")
 ```
 </center>
+
+---
+### Latent State 1 - Functional Principal Components
+
+```{r out.width = 850}
+knitr::include_graphics("imgs/FPCA_harmonics_s1_130423.png")
+```
+
 
 ---
 
@@ -1137,6 +1144,8 @@ class: middle, center
 ]
 
 --
+
+- Consistent patterns of association with psychopathology and cognitive function
 
 - Replication indicates more substantial evidence & lays foundation for clinical utility in the context of personalised healthcare and risk prediction
 
@@ -1458,7 +1467,7 @@ knitr::include_graphics("imgs/c5_table2.jpeg")
 ### FHMM Details
 
 <center>
-```{r out.width = 1000}
+```{r out.width = 800}
 knitr::include_graphics("imgs/FHMM_eqn_long.jpeg")
 ```
 </center>
@@ -1471,7 +1480,7 @@ knitr::include_graphics("imgs/FHMM_eqn_long.jpeg")
 
 
 <center>
-```{r out.width = 1000}
+```{r out.width = 800}
 knitr::include_graphics("imgs/S_DBw_long.jpeg")
 ```
 </center>
